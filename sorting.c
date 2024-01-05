@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 void swap(int * current, int * next)
 {
     int tmp = *current;
@@ -7,7 +6,7 @@ void swap(int * current, int * next)
     *next = tmp;
 }
 
-int bubble_sort(int arr[],int n)
+void bubble_sort(int arr[],int n)
 {
     int i, j;
     int swapped;
@@ -29,7 +28,7 @@ int bubble_sort(int arr[],int n)
     }
 }
 
-int selection_sort(int arr[],int n)
+void selection_sort(int arr[],int n)
 {
     int i,j;
     for (i = 0; i<n-1; i++)
@@ -43,6 +42,15 @@ int selection_sort(int arr[],int n)
         }
     }
 }
+
+// void heap_sort(int arr[], int n)
+// {
+//     for (int i = 0; i<n; i++)
+//     {
+
+//     }
+
+// }
 
 void print_arr(int * arr, int n)
 {
