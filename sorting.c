@@ -1,4 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+void print_arr(int * arr,int n)
+{
+    for (int i = 0; i<n; i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+}
+
 void swap(int * current, int * next)
 {
     int tmp = *current;
@@ -43,31 +54,32 @@ void selection_sort(int arr[],int n)
     }
 }
 
-// void heap_sort(int arr[], int n)
-// {
-//     for (int i = 0; i<n; i++)
-//     {
 
-//     }
-
-// }
-
-void print_arr(int * arr, int n)
+void scrambled_arr(int * arr)
 {
-    for (int i = 0; i<n; i++)
-    {
-        printf("%d ",arr[i]);
-    }
-    printf("\n");
+    arr[0] = 10;
+    arr[1] = 8;
+    arr[2] = 7;
+    arr[3] = 4;
+    arr[4] = 6;
+    arr[5] = 12;
+    arr[6] = 1;
+    arr[7] = 2;
+    arr[8] = 9;
+    arr[9] = 3;
 }
 
 int main() {
-    int arr[] = { 1, 9, 8, 4, 3, 7, 10, 11, 2, 5 };
+    int * arr = calloc(10,sizeof(int));
+    scrambled_arr(arr);
     printf("bubble\n");
     bubble_sort(arr,10);
     print_arr(arr,10);
-    int arr2[] = { 1, 9, 8, 4, 3, 7, 10, 11, 2, 5 };
+    scrambled_arr(arr);
+    // print_arr(arr,10);
     printf("selection\n");
-    selection_sort(arr2,10);
-    print_arr(arr2,10);
+    selection_sort(arr,10);
+    print_arr(arr,10);
+    printf("heapsort\n");
+    scrambled_arr(arr);
 }
